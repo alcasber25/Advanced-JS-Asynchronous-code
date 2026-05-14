@@ -49,3 +49,26 @@ const getRandomDog = async () => {
         console.error('Error:', error);
     }
 }
+
+//EJERCIO 3
+
+// 3.- Declara una función **getAllImagesByBreed** que obtenga todas las imágenes de la raza komondor.
+
+// FUNCIÓN getAllImagesByBreed()
+//   try
+//     Pedir imagen a la API
+//     Convertir a objeto
+//     Sacar la URL de la imagen de la raza komondor
+//     Devolver la URL
+//   catch
+//     Mostrar error
+
+const getAllImagesByBreed = async () => {
+    try {
+        const response = await fetch ('https://dog.ceo/api/breed/komondor/images')
+        const data = await response.json();
+        return data.message;
+    }catch (error) {
+        console.error('Error:', error);
+    }
+}
